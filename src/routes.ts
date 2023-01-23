@@ -4,6 +4,13 @@ import { FastifyInstance } from "fastify"
 import { z } from 'zod'
 
 export async function appRoutes(app: FastifyInstance){
+
+
+  app.get('/', () => {
+    const message = 'funciona'
+
+    return message
+  })
   
   app.post('/habits', async (req) => {
     const createHabitBody = z.object({
